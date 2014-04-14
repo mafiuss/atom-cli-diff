@@ -1,0 +1,16 @@
+# See https://atom.io/docs/latest/creating-a-package#menus for more details
+'context-menu':
+  '.overlayer':
+      'Diff Files': 'diff:selected'
+
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'diff'
+      'submenu': [
+        { 'label': 'Selected', 'command': 'diff:selected' }
+      ]
+    ]
+  }
+]
