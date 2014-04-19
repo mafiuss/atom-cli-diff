@@ -18,8 +18,8 @@ describe "Diff Helper", ->
       expect(diffHelper).not.toBe(null)
 
     it "has a myWorkspaceView member", ->
-      expect(diffHelper.myWorkspaceView).not.toBe(undefined)
-      expect(diffHelper.myWorkspaceView).not.toBe(null)
+      expect(diffHelper.myWorkspaceView).toBeDefined()
+      expect(diffHelper.myWorkspaceView).not.toBeNull()
 
   describe "Helper finding selected files in the tree view", ->
     it "finds the selected files", ->
@@ -45,4 +45,4 @@ describe "Diff Helper", ->
       readData = fs.readFileSync(filepath, {encoding: 'utf8'})
       expect(readData).toBe(data)
 
-      # fs.unlinkSync(filepath)
+      fs.unlinkSync(filepath)

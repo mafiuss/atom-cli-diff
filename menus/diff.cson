@@ -1,7 +1,7 @@
 # See https://atom.io/docs/latest/creating-a-package#menus for more details
 'context-menu':
-  '.overlayer':
-      'Diff Files': 'diff:selected'
+  '.tree-view':
+      'Diff selected files': 'diff:selected'
 
 'menu': [
   {
@@ -9,7 +9,7 @@
     'submenu': [
       'label': 'diff'
       'submenu': [
-        { 'label': 'Selected', 'command': 'diff:selected' }
+        { 'label': 'Diff selected files', 'command': 'diff:selected' }
       ]
     ]
   }
