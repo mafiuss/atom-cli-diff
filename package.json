@@ -1,7 +1,7 @@
 {
-  "name": "diff",
+  "name": "atom-diff",
   "main": "./lib/diff",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Diff package based in TextMate's diff bundle",
   "repository": "https://github.com/mafiuss/atom-diff",
   "license": "MIT",
