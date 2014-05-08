@@ -1,5 +1,5 @@
 {
-  "name": "atom-diff",
+  "name": "diff",
   "main": "./lib/diff",
   "version": "0.4.1",
   "description": "Diff package based in TextMate's diff bundle",
