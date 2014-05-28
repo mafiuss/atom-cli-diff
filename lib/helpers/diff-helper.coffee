@@ -35,3 +35,8 @@ module.exports =
       tmpfile = new tmp.File()
       tmpfile.writeFileSync(contents)
       tmpfile.path
+
+    createTempFileFromClipboard: (clipboard) ->
+      tmpfile = new tmp.File()
+      tmpfile.writeFileSync(clipboard.read())
+      tmpfile.path

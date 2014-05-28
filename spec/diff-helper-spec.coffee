@@ -46,3 +46,15 @@ describe "Diff Helper", ->
       expect(readData).toBe(data)
 
       fs.unlinkSync(filepath)
+
+  describe "Helper creating temp files from clipboard", ->
+    it "creates a temp file with the clipboard contents", ->
+      data = 'the quick brown fox jumps'
+      atom.clipboard.write(data);
+      filepath = diffHelper.createTempFileFromClipboard atom.clipboard
+      fs = require('fs')
+      expect(fs.existsSync(filepath)).toBe(true)
+      readData = fs.readFileSync(filepath, {encoding: 'utf8'})
+      expect(readData).toBe(data)
+
+      fs.unlinkSync(filepath)

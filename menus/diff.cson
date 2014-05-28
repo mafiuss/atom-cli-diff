@@ -2,7 +2,6 @@
 'context-menu':
   '.tree-view':
       'Diff selected files': 'diff:selected'
-
 'menu': [
   {
     'label': 'Packages'
@@ -10,6 +9,7 @@
       'label': 'diff'
       'submenu': [
         { 'label': 'Diff selected files', 'command': 'diff:selected' }
+        { 'label': 'Diff active editor file with clipboard', 'command': 'diff:clipboard' }
       ]
     ]
   }
