@@ -6,35 +6,27 @@
 
 @images: "atom://diff/assets/images";
 
-.diff-view {
-  padding: 5px;
-  overflow-y: scroll;
-  min-height: 100px;
+.source.diff {
 
-  div.diff-header {
-    height: 20px;
+
+  span.meta.diff.header.from-file {
+    color: @text-color-success;
   }
 
-  div.close-diff-view {
-    width: 16px;
-    height: 16px;
-    background: url("@{images}/close.png") no-repeat 0px 0px
+  span.meta.diff.header.to-file {
+    color: @text-color-success;
   }
 
-  div.close-diff-view:hover {
-    background-position: 0px -26px
+  span.meta.diff.range.unified,
+  span.meta.diff.toc-list.line-number {
+    color: @text-color-warning;
   }
 
-  div.line {
-    color: #fff;
-    letter-spacing: 0.2em;
+  span.markup.deleted.diff {
+    color: #C6C5FE;
   }
 
-  div.red {
-    background-color: red;
-  }
-
-  div.green {
-    background-color: green;
+  span.markup.inserted.diff {
+    color: #96CBFE;
   }
 }
