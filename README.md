@@ -2,7 +2,7 @@
 
 TextMate's diff bundle port
 
-![A screenshot of your spankin' package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)
+![A screenshot of your spankin' package](https://db.tt/aixCfPW5)
 
 Diff two selected files on the tree view by using the context menu (right click)
 
