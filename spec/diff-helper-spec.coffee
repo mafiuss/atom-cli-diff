@@ -1,16 +1,15 @@
-{_, WorkspaceView} = require 'atom'
 DiffHelper = require '../lib/helpers/diff-helper'
 MockTreeView = require './mock-tree-view'
+MockWorkspaceView = require './mock-workspace-view'
 
 describe "Diff Helper", ->
   diffHelper = null
   mockTreeView = null
 
   beforeEach ->
-    fakeWorkspaceView = new WorkspaceView
+    fakeWorkspaceView = new MockWorkspaceView
     @mockTreeView = new MockTreeView
     fakeWorkspaceView.append(@mockTreeView)
-    atom.workspaceView = fakeWorkspaceView
     diffHelper = new DiffHelper(fakeWorkspaceView)
 
   describe "DiffHelper construction", ->

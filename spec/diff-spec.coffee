@@ -1,21 +1,22 @@
-{_, WorkspaceView,Workspace} = require 'atom'
 Diff = require '../lib/diff'
 MockTreeView = require './mock-tree-view'
 
 describe "Diff", ->
   activationPromise = null
+  workspaceElement = null
 
   beforeEach ->
-    aWorkspaceView = new WorkspaceView
-    aTreeView = new MockTreeView
-    aWorkspaceView.append(aTreeView)
-    atom.workspaceView = aWorkspaceView
-    atom.workspace = new Workspace
+    workspaceElement = atom.views.getView(atom.workspace)
+    activationPromise = atom.packages.activatePackage('atom-cli-diff')
 
   describe "when the diff:selected command is triggered", ->
     it "attaches the diff view", ->
-      atom.workspaceView.trigger 'diff:selected'
-      # editor = atom.workspaceView.getActiveView().getEditor()
+      # atom.commands.dispatch workspaceElement, 'diff:clipboard'
+      # editor = atom.workspace.getActiveTextEditor()
 
-      # expect(editor.getGrammar().fileTypes).toContain('Diff')
-      expect(['diff']).toContain('diff')
+      waitsForPromise ->
+        activationPromise
+
+      runs ->
+        # expect(editor.getGrammar().fileTypes).toContain('Diff')
+        expect(['diff']).toContain('diff')

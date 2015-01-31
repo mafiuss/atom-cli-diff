@@ -1,16 +1,16 @@
-# See https://atom.io/docs/latest/creating-a-package#menus for more details
 'context-menu':
-  '.tree-view':
-      'Diff selected files': 'diff:selected'
+  '.tree-view': [
+    'label': 'Diff selected files'
+    'command': 'diff:selected'
+  ]
+
 'menu': [
-  {
-    'label': 'Packages'
+  'label': 'Packages'
+  'submenu': [
+    'label': 'Diff'
     'submenu': [
-      'label': 'diff'
-      'submenu': [
-        { 'label': 'Diff selected files', 'command': 'diff:selected' }
-        { 'label': 'Diff active editor file with clipboard', 'command': 'diff:clipboard' }
-      ]
+      { 'label': 'Diff selected files', 'command': 'diff:selected' }
+      { 'label': 'Diff active editor file with clipboard', 'command': 'diff:clipboard' }
     ]
-  }
+  ]
 ]
