@@ -7,18 +7,16 @@ describe "Diff Helper", ->
   mockTreeView = null
 
   beforeEach ->
-    fakeWorkspaceView = new MockWorkspaceView
     @mockTreeView = new MockTreeView
-    fakeWorkspaceView.append(@mockTreeView)
-    diffHelper = new DiffHelper(fakeWorkspaceView)
+    diffHelper = new DiffHelper(@mockTreeView)
 
   describe "DiffHelper construction", ->
     it "can be created", ->
       expect(diffHelper).not.toBe(null)
 
     it "has a myWorkspaceView member", ->
-      expect(diffHelper.myWorkspaceView).toBeDefined()
-      expect(diffHelper.myWorkspaceView).not.toBeNull()
+      expect(diffHelper.treeView).toBeDefined()
+      expect(diffHelper.treeView).not.toBeNull()
 
   describe "Helper finding selected files in the tree view", ->
     it "finds the selected files", ->

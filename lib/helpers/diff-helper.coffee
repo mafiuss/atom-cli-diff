@@ -1,24 +1,21 @@
 shellescape = require 'shell-escape'
-tmp         = require('temporary');
+tmp         = require 'temporary'
 
 module.exports =
   class DiffHelper
-    defaults:
-      'treeViewSelector': '.tree-view'
-    myWorkspaceView: null
+    treeView: null
 
     baseCommand: 'diff --strip-trailing-cr --label "left" --label "right" -u '
 
-    constructor: (aWorkspaceView)->
-      @myWorkspaceView = aWorkspaceView
+    constructor: (treeViewPanel)->
+      @treeView = treeViewPanel
 
     selectedFiles: ->
-      treeView = @myWorkspaceView.find(@defaults.treeViewSelector).view()
-      if treeView is null
+      if @treeView is null
         console.error 'tree-view not found or already set'
-        throw "Error"
+        return
       else
-        treeView.selectedPaths()
+        @treeView.selectedPaths()
 
     execDiff: (files, kallback) ->
       cmd  = @buildCommand(files)

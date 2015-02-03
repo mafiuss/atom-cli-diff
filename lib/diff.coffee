@@ -9,8 +9,6 @@ module.exports =
     atom.commands.add 'atom-workspace', 'diff:selected', => @selected()
     atom.commands.add 'atom-workspace', 'diff:clipboard', => @clipboard()
 
-    @diffHelper = new DiffHelper atom.views.getView(atom.workspace)
-
     if @diffView != null and @diffView.hasParent()
       @diffView.destroy()
     else
@@ -24,6 +22,8 @@ module.exports =
     diffViewState: @diffView.serialize()
 
   selected: ->
+    unless @diffHelper?
+      @diffHelper = new DiffHelper atom.workspace.getLeftPanels()[0].getItem()
     selectedPaths = @diffHelper.selectedFiles()
 
     if selectedPaths.length != 2
