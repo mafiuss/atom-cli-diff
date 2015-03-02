@@ -23,13 +23,13 @@ atom-text-editor::shadow {
 
     span.markup.deleted.diff {
       &, span.punctuation.definition.diff {
-        color: #C6C5FE;
+        color: @syntax-color-removed;
       }
     }
 
     span.markup.inserted.diff {
       &, span.punctuation.definition.diff {
-        color: #96CBFE;
+        color: @syntax-color-added;
       }
     }
   }
