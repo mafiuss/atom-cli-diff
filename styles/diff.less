@@ -22,11 +22,15 @@ atom-text-editor::shadow {
     }
 
     span.markup.deleted.diff {
-      color: #C6C5FE;
+      &, span.punctuation.definition.diff {
+        color: #C6C5FE;
+      }
     }
 
     span.markup.inserted.diff {
-      color: #96CBFE;
+      &, span.punctuation.definition.diff {
+        color: #96CBFE;
+      }
     }
   }
 }
