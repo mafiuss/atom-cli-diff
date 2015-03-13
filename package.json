@@ -9,8 +9,8 @@
     "atom": ">0.50.0"
   },
   "dependencies": {
-    "atom-space-pen-views": "^2.0.3",
-    "shell-escape": "0.1.0",
+    "atom-space-pen-views": "^2.0.4",
+    "shell-escape": "0.2.0",
     "temporary": "0.0.8"
   }
 }
