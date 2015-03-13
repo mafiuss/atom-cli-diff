@@ -1,34 +1,21 @@
 DiffHelper = require '../lib/helpers/diff-helper'
-MockTreeView = require './mock-tree-view'
-MockWorkspaceView = require './mock-workspace-view'
 
 describe "Diff Helper", ->
   diffHelper = null
-  mockTreeView = null
 
   beforeEach ->
-    @mockTreeView = new MockTreeView
-    diffHelper = new DiffHelper(@mockTreeView)
+    diffHelper = new DiffHelper()
 
   describe "DiffHelper construction", ->
     it "can be created", ->
       expect(diffHelper).not.toBe(null)
 
-    it "has a myWorkspaceView member", ->
-      expect(diffHelper.treeView).toBeDefined()
-      expect(diffHelper.treeView).not.toBeNull()
-
-  describe "Helper finding selected files in the tree view", ->
-    it "finds the selected files", ->
-      selectedFiles = diffHelper.selectedFiles()
-
-      expect(selectedFiles).toBeDefined()
-      expect(selectedFiles).not.toBeNull()
-      expect(selectedFiles.length).toBe(2)
-
   describe "Helper executing the diff command", ->
     it "returns the stdoutput string", ->
-      stdoutstr = diffHelper.execDiff(@mockTreeView.selectedPaths())
+      stdoutstr = diffHelper.execDiff [
+        "/Users/mafiuss/.atom/packages/diff/spec/data/file1.txt"
+        "/Users/mafiuss/.atom/packages/diff/spec/data/file2.txt"
+      ]
 
       expect(stdoutstr).toBeDefined()
       expect(stdoutstr).not.toBeNull()

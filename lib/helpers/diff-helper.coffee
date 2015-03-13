@@ -3,19 +3,9 @@ tmp         = require 'temporary'
 
 module.exports =
   class DiffHelper
-    treeView: null
 
-    baseCommand: 'diff --strip-trailing-cr --label "left" --label "right" -u '
-
-    constructor: (treeViewPanel)->
-      @treeView = treeViewPanel
-
-    selectedFiles: ->
-      if @treeView is null
-        console.error 'tree-view not found or already set'
-        return
-      else
-        @treeView.selectedPaths()
+    constructor: ->
+      @baseCommand = 'diff --strip-trailing-cr --label "left" --label "right" -u '
 
     execDiff: (files, kallback) ->
       cmd  = @buildCommand(files)

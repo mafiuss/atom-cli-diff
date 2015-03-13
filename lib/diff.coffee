@@ -23,8 +23,9 @@ module.exports =
 
   selected: ->
     unless @diffHelper?
-      @diffHelper = new DiffHelper atom.workspace.getLeftPanels()[0].getItem()
-    selectedPaths = @diffHelper.selectedFiles()
+      @diffHelper = new DiffHelper()
+    @treeView = atom.workspace.getLeftPanels()[0].getItem()
+    selectedPaths = @treeView.selectedPaths()
 
     if selectedPaths.length != 2
       console.error "wrong number of arguments for this command"
@@ -36,6 +37,9 @@ module.exports =
         atom.workspace.open(@diffHelper.createTempFile(stdout))
 
   clipboard: ->
+    unless @diffHelper?
+      @diffHelper = new DiffHelper()
+
     selectedPaths = [
       atom.workspace.activePaneItem.getPath(),
       @diffHelper.createTempFileFromClipboard(atom.clipboard)
