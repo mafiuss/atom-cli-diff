@@ -29,10 +29,10 @@ module.exports =
 
     if selectedPaths.length != 2
       console.error "wrong number of arguments for this command"
-      throw new Error("Error")
+      throw new Error("wrong number of arguments for this command")
 
     p = @diffHelper.execDiff selectedPaths, (error, stdout, stderr) =>
-        if (error != null)
+        if error?
           console.log "there was an error " + error
         atom.workspace.open(@diffHelper.createTempFile(stdout))
 
