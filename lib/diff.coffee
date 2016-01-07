@@ -1,5 +1,4 @@
 WordModeView = require "./word-mode-view"
-SampleView = require "./sample-view"
 DiffHelper = require './helpers/diff-helper'
 {CompositeDisposable} = require 'atom'
 
