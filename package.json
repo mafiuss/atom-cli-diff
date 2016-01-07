@@ -10,7 +10,12 @@
   },
   "dependencies": {
     "atom-space-pen-views": "^2.0.4",
+    "diff-match-patch": "^1.0.0",
     "shell-escape": "0.2.0",
     "temporary": "0.0.8"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "season": "^5.3.0"
   }
 }
