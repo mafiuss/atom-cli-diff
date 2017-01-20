@@ -6,29 +6,29 @@
 
 @images: "atom://diff/assets/images";
 
-atom-text-editor::shadow {
-  .source.diff {
-    span.meta.diff.header.from-file {
+atom-text-editor {
+  .syntax--source.syntax--diff {
+    span.syntax--meta.syntax--diff.syntax--header.syntax--from-file {
       color: @text-color-success;
     }
 
-    span.meta.diff.header.to-file {
+    span.syntax--meta.syntax--diff.syntax--header.syntax--to-file {
       color: @text-color-success;
     }
 
-    span.meta.diff.range.unified,
-    span.meta.diff.toc-list.line-number {
+    span.syntax--meta.syntax--diff.syntax--range.syntax--unified,
+    span.syntax--meta.syntax--diff.syntax--toc-list.line-number {
       color: @text-color-warning;
     }
 
-    span.markup.deleted.diff {
-      &, span.punctuation.definition.diff {
+    span.syntax--markup.syntax--deleted.syntax--diff {
+      &, span.syntax--punctuation.syntax--definition.syntax--diff {
         color: @syntax-color-removed;
       }
     }
 
-    span.markup.inserted.diff {
-      &, span.punctuation.definition.diff {
+    span.syntax--markup.syntax--inserted.syntax--diff {
+      &, span.syntax--punctuation.syntax--definition.syntax--diff {
         color: @syntax-color-added;
       }
     }
